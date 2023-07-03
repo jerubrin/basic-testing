@@ -23,10 +23,7 @@ const testCases = [
 ];
 
 describe('simpleCalculator', () => {
-  test('should blah-blah', () => {
-    testCases.forEach((_case) => {
-      expect(simpleCalculator({ ..._case })).toBe(_case.expected);
-    })
-    expect(true).toBe(true);
+  test.each(testCases)('should test all cases', (_case) => {
+    expect(simpleCalculator({ ..._case })).toBe(_case.expected);
   });
 });
